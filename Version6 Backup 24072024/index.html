@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Viewer</title>
+    <style>
+        body { margin: 0; overflow: hidden; }
+        canvas { display: block; }
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        #navigation {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <div id="canvasContainer" style="position: relative;"></div>
+    <canvas id="galaxyCanvas" style="width: 100%; height: 100vh;"></canvas>
+    </div>
+    <div id="info">
+        <div id="ownedStarCount">Owned Stars: 0</div>
+        <div id="quadrant"></div>
+        <div id="segment"></div>
+        <div id="starName"></div>
+        <div id="starCount"></div>
+    </div>
+    <div id="navigation">
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+    </div>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.150.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.150.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="controls.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="visualEffects.js"></script>
+</body>
+</html>
